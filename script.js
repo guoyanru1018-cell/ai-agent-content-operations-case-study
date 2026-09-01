@@ -7,9 +7,9 @@ const sourceMap = {
     "before-b": ".manual-row .manual:nth-child(2) img"
   };
   const assetMap = {
-    ".shot-left img": "assets/images/after_new_b_focus.jpg",
-    ".shot-main img": "assets/images/after_new_a_focus.jpg",
-    ".shot-right img": "assets/images/after_new_c_focus.jpg",
+    ".shot-left img": "assets/images/after_new_b.jpg",
+    ".shot-main img": "assets/images/after_new_a.jpg",
+    ".shot-right img": "assets/images/IMG_8844.JPG",
     ".manual-row .manual:nth-child(1) img": "assets/images/IMG_8846.JPG",
     ".manual-row .manual:nth-child(2) img": "assets/images/IMG_8847.JPG"
   };
