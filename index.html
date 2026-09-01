@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agent Case Study — Hero + Before</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">CASE STUDY · AI CONTENT OPERATIONS</div>
+    <h1>用 AI Agent<br>重构行业榜单内容生产流程</h1>
+    <p class="lead">
+      把依赖个人经验的榜单分析、重点作品筛选、内容生成与公众号排版，
+      拆成可执行的规则与 Agent 工作流。
+    </p>
+    <div class="tagrow">
+      <div class="tag">AI Agent Workflow</div>
+      <div class="tag">Prompt Engineering</div>
+      <div class="tag">Content Operations</div>
+      <div class="tag">Human-in-the-loop</div>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <strong>≈6h → ≈1h</strong>
+        <span>单篇榜单类内容生产耗时</span>
+      </div>
+      <div class="metric">
+        <strong>Prompt × Rules × Agent</strong>
+        <span>核心工作方法</span>
+      </div>
+      <div class="metric">
+        <strong>标准化输出</strong>
+        <span>结构、表格与排版规范</span>
+      </div>
+    </div>
+    <div class="proof">真实项目复盘 · 公开内容与脱敏工作过程展示</div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="shot shot-left"><span class="browser-dots"></span><img src="assets/images/after_new_b_focus.jpg" alt="Hero 标准化产出截图一"></div>
+    <div class="shot shot-main"><span class="browser-dots"></span><img src="assets/images/after_new_a_focus.jpg" alt="Hero 标准化产出截图二"></div>
+    <div class="shot shot-right"><span class="browser-dots"></span><img src="assets/images/after_new_c_focus.jpg" alt="Hero 标准化产出截图三"></div>
+    <div class="hero-after-label">AFTER · STANDARDIZED OUTPUT</div>
+    <div class="hero-image-hint">点击查看清晰长图</div>
+  </div>
+  <div class="page-no">01 / CASE OVERVIEW</div>
+</section>
+
+<section class="before">
+  <div class="kicker">01 · CHALLENGE / BEFORE</div>
+  <h2>当内容生产成为每日运营任务，<br>重复性人工生产开始成为效率与规模化的<span class="keep-word">瓶颈</span></h2>
+  <div class="sub">问题不在“不会做”，而在每一期都要重新做一遍。</div>
+
+  <div class="before-grid">
+    <div>
+      <div class="flow">
+        <span>整理榜单数据</span><i>→</i>
+        <span>前后榜单对比</span><i>→</i>
+        <span>筛选重点作品</span><i>→</i>
+        <span>补充相关信息</span><i>→</i>
+        <span>趋势分析</span><i>→</i>
+        <span>撰写</span><i>→</i>
+        <span>推文编辑器手工排版</span><i>→</i>
+        <span>发布</span>
+      </div>
+
+      <div class="pains">
+        <div class="pain">
+          <small>01 / EFFICIENCY</small>
+          <h3>重复工作多</h3>
+          <p>每期都需要重新完成数据整理、作品解读、内容撰写与排版。</p>
+        </div>
+        <div class="pain">
+          <small>02 / EXPERIENCE</small>
+          <h3>判断高度依赖个人经验</h3>
+          <p>哪些作品值得重点分析、榜单变化如何解释，缺少稳定复用规则。</p>
+        </div>
+        <div class="pain">
+          <small>03 / CONSISTENCY</small>
+          <h3>输出标准不统一</h3>
+          <p>不同文章在结构、表格、字号、配色和产品文案等方面容易出现差异。</p>
+        </div>
+      </div>
+
+      <div class="quote">
+        随着栏目进入稳定生产阶段，真正需要优化的不是“写得更快”，
+        而是把重复判断和执行步骤沉淀成一套可复用的生产机制。
+      </div>
+    </div>
+
+    <div class="before-visual">
+      <div class="cap">
+        <b>Before · 人工生产版本</b>
+        <span>真实历史产出</span>
+      </div>
+      <div class="manual-row">
+        <div class="manual">
+          <img src="assets/images/IMG_8846.JPG" alt="Before 人工版本截图一">
+          <div class="manual-label">标题 / 结构不统一</div>
+        </div>
+        <div class="manual">
+          <img src="assets/images/IMG_8847.JPG" alt="Before 人工版本截图二">
+          <div class="manual-label">表格 / 配色 / 产品文案不统一</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="page-no">02 / CHALLENGE</div>
+</section>
+
+<section class="case-section alt insight">
+  <div class="section-head">
+    <div class="kicker">02 · INSIGHT / RULE SYSTEM</div>
+    <h2>真正自动化的，<br>不是“写文章”，而是运营判断</h2>
+    <div class="sub">把隐性的内容运营经验显化，让 Agent 知道“应该观察什么、判断什么、以什么标准输出”。</div>
+  </div>
+
+  <div class="rule-grid">
+    <article class="rule-card">
+      <div class="card-no">01 / DATA RULES</div>
+      <h3>Data Rules</h3>
+      <div class="cn">数据判断规则</div>
+      <p>统一榜单中的排名、热度、新增播放、题材、内容形态等字段定义，并建立前后期数据对比口径。</p>
+      <div class="chip-list"><span>排名变化</span><span>新增播放</span><span>热度</span><span>内容形态</span></div>
+    </article>
+    <article class="rule-card">
+      <div class="card-no">02 / PRIORITY RULES</div>
+      <h3>Priority Rules</h3>
+      <div class="cn">重点作品筛选</div>
+      <p>用明确规则判断哪些作品值得进入深度分析，而不是每期依赖人工主观选择。</p>
+      <div class="chip-list"><span>新上榜黑马剧</span><span>排名明显上升</span><span>连续霸榜</span><span>热门 IP 续作</span><span>新内容形态</span></div>
+    </article>
+    <article class="rule-card">
+      <div class="card-no">03 / ANALYSIS FRAMEWORK</div>
+      <h3>Analysis Framework</h3>
+      <div class="cn">趋势分析框架</div>
+      <p>要求 Agent 从内容形态、题材、人物关系、开场钩子、IP 复用、多语种发行和平台变化等维度，提炼 2–3 个真正值得关注的变化，而不是简单复述榜单。</p>
+      <div class="chip-list"><span>内容形态</span><span>题材</span><span>人物关系</span><span>IP 复用</span><span>平台变化</span></div>
+    </article>
+    <article class="rule-card">
+      <div class="card-no">04 / OUTPUT RULES</div>
+      <h3>Output Rules</h3>
+      <div class="cn">输出规范</div>
+      <p>固定文章结构、表格字段、字号、紫色视觉体系、产品文案，以及 HTML / Markdown 输出格式。</p>
+      <div class="chip-list"><span>固定结构</span><span>表格字段</span><span>紫色体系</span><span>HTML</span><span>Markdown</span></div>
+    </article>
+  </div>
+  <div class="insight-conclusion">把“我知道该怎么做”<br>变成“<span>Agent 知道该按什么规则做</span>”。</div>
+  <div class="page-no">03 / INSIGHT</div>
+</section>
+
+<section class="case-section workflow-section">
+  <div class="section-head">
+    <div class="kicker">03 · SYSTEM / AGENT WORKFLOW</div>
+    <h2>Human-in-the-loop<br>AI Agent Workflow</h2>
+    <div class="sub">人工保留信息源确认、事实校验和最终决策，Agent 接管高重复、高规则化的中间生产环节。</div>
+  </div>
+  <div class="workflow-layout">
+    <div class="workflow-map">
+      <div class="workflow-node human">
+        <div class="node-kicker">HUMAN</div>
+        <h3>数据源确认 · 信息输入</h3>
+      </div>
+      <div class="workflow-arrow">↓</div>
+      <div class="workflow-node">
+        <div class="node-kicker">AGENT 01</div>
+        <h3>榜单理解与对比</h3>
+        <ul><li>新上榜作品识别</li><li>排名变化</li><li>热度变化</li><li>前后期差异</li></ul>
+      </div>
+      <div class="workflow-arrow">↓</div>
+      <div class="workflow-node">
+        <div class="node-kicker">AGENT 02</div>
+        <h3>重点作品筛选与信息补全</h3>
+        <ul><li>按规则选择重点作品</li><li>搜索公开作品资料</li><li>核验题材 / 人物 / 剧情信息</li></ul>
+      </div>
+      <div class="workflow-arrow">↓</div>
+      <div class="workflow-node">
+        <div class="node-kicker">AGENT 03</div>
+        <h3>趋势洞察与内容生成</h3>
+        <ul><li>提炼 2–3 个核心变化</li><li>重点作品分析</li><li>趋势总结</li><li>初稿生成</li></ul>
+      </div>
+      <div class="workflow-arrow">↓</div>
+      <div class="workflow-node">
+        <div class="node-kicker">AGENT 04</div>
+        <h3>结构化排版输出</h3>
+        <ul><li>固定文章结构</li><li>固定表格</li><li>HTML</li><li>Markdown</li><li>统一视觉规范</li></ul>
+      </div>
+      <div class="workflow-arrow">↓</div>
+      <div class="workflow-node human">
+        <div class="node-kicker">HUMAN</div>
+        <h3>人工审核 · 事实校验 · 发布</h3>
+      </div>
+    </div>
+    <aside class="workflow-note"><strong>AI 负责高重复、<br>高规则化环节；</strong><br>人工负责判断、校验和最终发布。</aside>
+  </div>
+  <div class="page-no">04 / SYSTEM</div>
+</section>
+
+<section class="case-section alt execution-section">
+  <div class="section-head">
+    <div class="kicker">04 · EXECUTION / BEHIND THE WORKFLOW</div>
+    <h2>Agent 不是黑盒，<br>我给它建立了一套执行标准</h2>
+    <div class="sub">Prompt Engineering × Workflow Design × Content Operations</div>
+  </div>
+  <div class="execution-grid">
+    <article class="execution-card">
+      <div class="execution-shot">
+        <div class="workbench-window">
+          <div class="workbench-toolbar"><i></i><span>Agent Workbench · Task definition</span></div>
+          <div class="workbench-body"><div class="workbench-nav">任务目标<br><strong>观察维度</strong><br>输入字段<br>输出要求</div><div class="prompt-panel"><h4>提炼本期榜单核心变化</h4><div class="prompt-line"><b>观察</b><span>AI 仿真人剧、动漫、短剧等内容形态</span></div><div class="prompt-line"><b>判断</b><span>热门题材、人物关系、开场钩子与榜单变化</span></div><div><span class="prompt-chip">排名变化</span><span class="prompt-chip">新增播放</span><span class="prompt-chip">重点作品</span></div></div></div>
+        </div>
+      </div>
+      <div class="execution-copy"><div class="card-no">STEP 01</div><h3>先定义 Agent 要观察什么</h3><p>不是直接要求“写一篇榜单推文”，而是明确分析维度、字段优先级、重点作品筛选方式和最终任务目标。</p></div>
+    </article>
+    <article class="execution-card">
+      <div class="execution-shot">
+        <div class="output-preview"><div class="output-sheet"><h4>榜单内容 · Output schema</h4><div class="output-block short"></div><p>前言 / 核心变化</p><div class="output-block"></div><p>TOP 榜单 / 重点作品</p><div class="output-block short"></div><p>趋势洞察 / 产品能力推荐 / CTA</p></div><div class="check-list"><strong>固定模块</strong>标题<br>数据表格<br>作品分析<br>趋势总结<br>CTA</div></div>
+      </div>
+      <div class="execution-copy"><div class="card-no">STEP 02</div><h3>固定文章结构</h3><p>把标题、前言、TOP 榜单、重点作品、趋势洞察、产品能力推荐与 CTA 固定成结构化模块。</p></div>
+    </article>
+    <article class="execution-card">
+      <div class="execution-shot">
+        <div class="workbench-window"><div class="workbench-toolbar"><i></i><span>Quality control · rule checklist</span></div><div class="prompt-panel" style="margin-top:14px"><h4>生成后继续检查</h4><div class="prompt-line"><b>✓</b><span>核心结论有榜单数据或作品案例支撑</span></div><div class="prompt-line"><b>✓</b><span>不存在过度推断与重复表达</span></div><div class="prompt-line"><b>✓</b><span>产品推荐与洞察相关</span></div></div></div>
+      </div>
+      <div class="execution-copy"><div class="card-no">STEP 03</div><h3>把质量检查也写进规则</h3><p>检查核心结论是否有数据支撑、是否过度推断、内容形态是否准确、是否重复表达，以及产品推荐是否与洞察相关。</p></div>
+    </article>
+    <article class="execution-card">
+      <div class="execution-shot">
+        <div class="output-preview"><div class="output-sheet"><h4>Deliverables</h4><div class="output-block"></div><div class="output-block short"></div><div class="output-block"></div><p>可进入后续编辑与发布环节</p></div><div class="check-list"><strong>EXPORT</strong>HTML<br>Markdown<br>长图<br>素材包</div></div>
+      </div>
+      <div class="execution-copy"><div class="card-no">STEP 04</div><h3>Agent 最终输出的是“可交付文件”</h3><p>最终直接生成 HTML、Markdown、长图与其他可进入后续编辑环节的素材，而不只是一段聊天文字。</p></div>
+    </article>
+  </div>
+  <div class="page-no">05 / EXECUTION</div>
+</section>
+
+<section class="case-section compare-section">
+  <div class="section-head">
+    <div class="kicker">05 · OUTPUT / BEFORE VS AFTER</div>
+    <h2>从“每次重新做”<br>到“按规则稳定生产”</h2>
+  </div>
+  <div class="compare-grid">
+    <article class="compare-panel">
+      <div class="compare-panel-head"><h3>Before · 手工生产</h3><span>人工版本</span></div>
+      <div class="compare-shot"><img data-reuse="before-a" alt="Before 人工版本推文截图"></div>
+      <ul class="compare-list"><li>结构根据当期内容临时调整</li><li>表格与视觉样式存在差异</li><li>分析、写作、排版均需要人工完成</li></ul>
+    </article>
+    <article class="compare-panel after">
+      <div class="compare-panel-head"><h3>After · Agent Workflow</h3><span>标准化版本</span></div>
+      <div class="compare-proof-row">
+        <div class="compare-shot"><img data-reuse="after-main" alt="After 标准化输出截图一"></div>
+        <div class="compare-shot"><img data-reuse="after-side-a" alt="After 标准化输出截图二"></div>
+        <div class="compare-shot"><img data-reuse="after-side-b" alt="After 标准化输出截图三"></div>
+      </div>
+      <ul class="compare-list"><li>固定内容框架与数据字段</li><li>统一表格、配色、字号与产品文案</li><li>Agent 完成分析、初稿与结构化排版</li><li>人工转向审核和优化</li></ul>
+    </article>
+  </div>
+  <div class="impact-foot"><span>6h → ≈1h</span> <small>单篇榜单类内容生产耗时</small></div>
+  <div class="page-no">06 / OUTPUT</div>
+</section>
+
+<section class="case-section alt impact-section">
+  <div class="section-head">
+    <div class="kicker">06 · IMPACT / PERFORMANCE</div>
+    <h2>效率之外，<br>我也开始把时间重新投入内容判断与复盘</h2>
+  </div>
+  <div class="impact-kpis">
+    <div class="impact-kpi"><strong>2,905</strong><span>阅读</span></div>
+    <div class="impact-kpi"><strong>138</strong><span>分享</span></div>
+    <div class="impact-kpi"><strong>94</strong><span>新增关注</span></div>
+  </div>
+  <div class="impact-layout">
+    <div class="impact-copy">
+      <h3>工作流应用期间的内容表现 Snapshot</h3>
+      <p>从 8 月开始，订阅号小号专门发布国内短剧日榜和国外短剧周榜，用差异化内容触达积累自然流量。以上数据为三周内的自然流量表现记录。</p>
+      <div class="impact-foot">自动化的目标不是单纯提高产量，<br>而是释放人工时间，让运营人员把更多精力投入选题判断、内容质量和效果复盘。</div>
+    </div>
+    <div class="impact-evidence">
+      <div class="snapshot-label">Performance signals · 真实后台截图展示区域</div>
+      <div class="signal-row"><span>阅读趋势</span><div class="signal-line"></div></div>
+      <div class="signal-row"><span>流量来源</span><div class="signal-line"></div></div>
+      <div class="signal-row"><span>新增关注趋势 / 渠道构成</span><div class="signal-line"></div></div>
+      <div class="chart-rebuild">
+        <h4>流量来源 · 阅读 2,905</h4>
+        <div class="bar-row"><span>搜一搜</span><div class="bar-track"><i style="width:57.6%"></i></div><em>57.6%</em></div>
+        <div class="bar-row"><span>聊天会话</span><div class="bar-track"><i style="width:25.9%"></i></div><em>25.9%</em></div>
+        <div class="bar-row"><span>朋友圈</span><div class="bar-track"><i style="width:4.9%"></i></div><em>4.9%</em></div>
+        <div class="bar-row"><span>公众号消息</span><div class="bar-track"><i style="width:3.5%"></i></div><em>3.5%</em></div>
+      </div>
+      <div class="chart-rebuild">
+        <h4>新增关注 94 · 渠道构成</h4>
+        <div class="bar-row"><span>文章页关注</span><div class="bar-track"><i style="width:55.32%"></i></div><em>52</em></div>
+        <div class="bar-row"><span>搜一搜</span><div class="bar-track"><i style="width:26.6%"></i></div><em>25</em></div>
+        <div class="bar-row"><span>扫描二维码</span><div class="bar-track"><i style="width:10.64%"></i></div><em>10</em></div>
+        <div class="bar-row"><span>其他合计</span><div class="bar-track"><i style="width:7.45%"></i></div><em>7</em></div>
+      </div>
+      <div class="rebuild-note">根据你提供的后台截图重绘；图形用于提升可读性，不新增截图中未出现的数据。</div>
+    </div>
+  </div>
+  <div class="page-no">07 / IMPACT</div>
+</section>
+
+<section class="case-section contribution-section">
+  <div class="section-head">
+    <div class="kicker">07 · MY ROLE / WHAT I BUILT</div>
+    <h2>这个项目最终沉淀的，<br>不是一条 Prompt，而是一套生产机制</h2>
+  </div>
+  <div class="role-grid">
+    <article class="role-card"><div class="card-no">01</div><h3>Workflow Design</h3><p>把原本人工 SOP 拆解为可以被 Agent 执行的阶段。</p></article>
+    <article class="role-card"><div class="card-no">02</div><h3>Prompt Engineering</h3><p>设计固定角色、任务目标、分析维度、输出结构和质量检查 Prompt。</p></article>
+    <article class="role-card"><div class="card-no">03</div><h3>Rule System</h3><p>建立数据字段、重点作品筛选与趋势分析规则。</p></article>
+    <article class="role-card"><div class="card-no">04</div><h3>Structured Output</h3><p>统一 HTML、Markdown、表格、字号、配色和 CTA。</p></article>
+    <article class="role-card"><div class="card-no">05</div><h3>Iteration</h3><p>结合真实输出和内容表现持续调整 Prompt 与生产流程。</p></article>
+  </div>
+  <div class="closing">AI 的价值并不是替我完成一次内容创作，<br>而是把一套个人运营经验沉淀成可以反复执行、<br><span>持续优化的生产机制。</span></div>
+  <div class="page-no">08 / MY CONTRIBUTION</div>
+</section>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button type="button" id="lightbox-close" aria-label="关闭大图">×</button>
+  <figure><div class="lightbox-image-wrap"><img id="lightbox-image" alt=""></div><figcaption id="lightbox-caption"></figcaption></figure>
+</div>
+
+<script defer src="script.js"></script>
+
+</body>
+</html>
